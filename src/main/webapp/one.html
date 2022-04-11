@@ -133,17 +133,21 @@ transition: all 250ms ease-in-out 0s;
                 <a class="nav-link " href="#footer"><i class="fa fa-address-book-o"></i> Contact Us</a>
               </li>
 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-key"></i>
-                   Login
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Needy?</a></li>
-                  <li><a class="dropdown-item" href="#">Donor?</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Admin</a></li>
-                </ul>
-              </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true" aria-haspopup="true"><i class="fa fa-key"></i>
+                       Login
+                    </a>
+                    <ul class="dropdown-menu" >
+                      <li><form action="indiv"></form><a class="dropdown-item btn btn-info" role="button" href="login.html" data-toggle="modal" data-target="#modal1">Indivisual</a>
+                      </li>
+                      
+                      <li><a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#modal2" id="organisation">Organisation</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#modal3">Admin</a></li>
+                    </ul>
+
+                    
+                  </li>
             </ul>
             <form action="find" class="d-flex" method="post">
               <input class="form-control me-2" type="text" name="city" placeholder="City Name... " style="font-style:italic" required>
@@ -197,9 +201,9 @@ transition: all 250ms ease-in-out 0s;
 <br>
 <div class="conatiner">
     <div class="row">
-     <div class="col-6 text-center"><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modelId"><h2><b>Donate Now !</b></h2></button></div>
+     <div class="col-6 text-center"><button class="btn btn-danger btn-lg rounded-pill" data-bs-toggle="modal" data-bs-target="#modelId"><h2><b>Donate</b></h2></button></div>
 
-     <div class="col-6 text-center "><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modelId"><h2><b>Need Now !</b></h2></button></div>
+     <div class="col-6 text-center "><button class="btn btn-danger btn-lg rounded-pill" data-bs-toggle="modal" data-bs-target="#modelId"><h2><b>Register</b></h2></button></div>
      </div>
              <!-- Modal -->
              <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" ">
@@ -212,7 +216,7 @@ transition: all 250ms ease-in-out 0s;
                     <div class="modal-body">
                       <div class="row">
                         <div class="col-12 text-center">
-                          <button class="rounded  text-light" id="mbutton"><h3><b>Register as an Organisation ?</b></h3></button>
+                          <a href="organisationRegistration.html" target="_blank"><button class="rounded  text-light" id="mbutton"><h3><b>Register as an Organisation ?</b></h3></button></a>
                         </div>
                       </div>
       
@@ -228,7 +232,7 @@ transition: all 250ms ease-in-out 0s;
       
                       <div class="row">
                         <div class="col-12 text-center">
-                          <button class="rounded text-light" id="mbutton"><h3><b>Already Registered User ?</b></h3></button>
+                        <a href="login.html"><button class="rounded text-light" id="mbutton" ><h3><b>Already Registered User ?</b></h3></button></a>  
                         </div>
                       </div>
                       <br>
@@ -248,7 +252,7 @@ transition: all 250ms ease-in-out 0s;
         <div class="row" >
             <div class="col-5  text-danger " style="padding: 15px;  "><b><h1>why blood donation ?</h1> </b></div>
             <div class="col-7  ">
-                Blood donations in India are conducted by organisations and hospitals through blood donation camps. Donors can also visit blood banks in hospitals to donate blood. Despite the shortage of donated blood, efforts by the government and advocacy groups over the years have helped bridge the gap between demand and supply. The number of voluntary blood donors increased from 54.4% in 2006–2007 to 83.1% in 2011–2012, with the number of blood units increasing from 4.4 million units in 2006–2007 to 9.3 million units in 2012–2013.[1] In 2016, the Ministry of Health and Family Welfare reported a donation of 10.9 million units against a requirement of 12 million units.[2] 12.7 million units were donated in 2020, lower than projected due to the COVID-19 pandemic.[3] The regulatory framework for blood donation and blood bank management rests with the Central Drugs Standard Control Organisation, while technical bodies like the National Blood Transfusion Council and National AIDS Control Organisation formulate guidelines and recommendations for transfusion medicine and blood bank management.
+                Blood donations in India are conducted by organisations and hospitals through blood donation camps. Donors can also visit blood banks in hospitals to donate blood. Despite the shortage of donated blood, efforts by the government and advocacy groups over the years have helped bridge the gap between demand and supply. The number of voluntary blood donors increased from 54.4% in 2006â2007 to 83.1% in 2011â2012, with the number of blood units increasing from 4.4 million units in 2006â2007 to 9.3 million units in 2012â2013.[1] In 2016, the Ministry of Health and Family Welfare reported a donation of 10.9 million units against a requirement of 12 million units.[2] 12.7 million units were donated in 2020, lower than projected due to the COVID-19 pandemic.[3] The regulatory framework for blood donation and blood bank management rests with the Central Drugs Standard Control Organisation, while technical bodies like the National Blood Transfusion Council and National AIDS Control Organisation formulate guidelines and recommendations for transfusion medicine and blood bank management.
                 Healthy individuals can donate around 350 millilitres of blood.[4] Donors are provided with refreshments after the procedure, which usually include glucose drinks, biscuits and fruits. Some organisations offer transportation facilities, as well as certificates or badges as gratitude
                 
 
@@ -262,20 +266,31 @@ transition: all 250ms ease-in-out 0s;
 
       <div class="container">
         <div class="row" id="about">
-            <div class="col-5  text-danger " style="padding: 15px;  "><b><h1>who we are ?</h1> </b></div>
-            <div class="col-7  ">
-                Blood donations in India are conducted by organisations and hospitals through blood donation camps. Donors can also visit blood banks in hospitals to donate blood. Despite the shortage of donated blood, efforts by the government and advocacy groups over the years have helped bridge the gap between demand and supply. The number of voluntary blood donors increased from 54.4% in 2006–2007 to 83.1% in 2011–2012, with the number of blood units increasing from 4.4 million units in 2006–2007 to 9.3 million units in 2012–2013.[1] In 2016, the Ministry of Health and Family Welfare reported a donation of 10.9 million units against a requirement of 12 million units.[2] 12.7 million units were donated in 2020, lower than projected due to the COVID-19 pandemic.[3] The regulatory framework for blood donation and blood bank management rests with the Central Drugs Standard Control Organisation, while technical bodies like the National Blood Transfusion Council and National AIDS Control Organisation formulate guidelines and recommendations for transfusion medicine and blood bank management.
-                Healthy individuals can donate around 350 millilitres of blood.[4] Donors are provided with refreshments after the procedure, which usually include glucose drinks, biscuits and fruits. Some organisations offer transportation facilities, as well as certificates or badges as gratitude
+            <div class="col-5  text-danger " style="padding: 15px;  "><b><h1>who should donate ?</h1> </b></div>
+            <div class="col-7  "> 
+                We are a non-profit organization whose mission is to provide the blood needed to save the lives of the people . Our goal is to keep all information about blood donors, various blood groups available at each blood supply and help them to manage better. The aim is to provide transparency in the field, to make the blood banking system free and free of corruption and to make the blood bank control system work.
+                Blood Bank Management System (BBMS) could be a browser based mostly system that's designed to store, process, retrieve and analyze info involved with the executive and inventory management inside a bank. This project aims at maintaining all the knowledge touching on blood donors, totally different blood teams out there in every bank and facilitate them manage during a higher means. Aim is to supply transparency during this field, build the method of getting blood from a bank problem free and corruption free and build the system of bank management effective.
             </div>
         </div>
 
       </div>
 
       <br>
-      
+      <hr>
       <br>
       
+      <div class="container">
+        <div class="row" id="about">
+            <div class="col-5  text-danger " style="padding: 15px;  "><b><h1>who we are ?</h1> </b></div>
+            <div class="col-7  "> 
+                We are a non-profit organization whose mission is to provide the blood needed to save the lives of the people . Our goal is to keep all information about blood donors, various blood groups available at each blood supply and help them to manage better. The aim is to provide transparency in the field, to make the blood banking system free and free of corruption and to make the blood bank control system work.
+                Blood Bank Management System (BBMS) could be a browser based mostly system that's designed to store, process, retrieve and analyze info involved with the executive and inventory management inside a bank. This project aims at maintaining all the knowledge touching on blood donors, totally different blood teams out there in every bank and facilitate them manage during a higher means. Aim is to supply transparency during this field, build the method of getting blood from a bank problem free and corruption free and build the system of bank management effective.
+            </div>
+        </div>
 
+      </div>
+      <br>
+      <br>
       
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -302,22 +317,22 @@ transition: all 250ms ease-in-out 0s;
     <div class="thumb-content"><a href="#.">Get Started</a></div> 
     </li>
     <li>
-    <div class="thumb-content"><a href="#.">Top Leaders</a></div> 
+    <div class="thumb-content"><a href="https://www.indianredcross.org/ircs/index.php">Red Cross Society</a></div> 
     </li>
     <li>
-    <div class="thumb-content"><a href="#.">Success Stories</a></div> 
+    <div class="thumb-content"><a href="#.">Indian Blood Bank</a></div> 
     </li>
     <li>
-    <div class="thumb-content"><a href="#.">Event/Tickets</a></div> 
+    <div class="thumb-content"><a href="#.">e-RaktKosh</a></div> 
     </li>
     <li>
-    <div class="thumb-content"><a href="#.">News</a></div>  
+    <div class="thumb-content"><a href="#.">WHO</a></div>  
     </li>
     <li>
-    <div class="thumb-content"><a href="#.">Lifestyle</a></div> 
+    <div class="thumb-content"><a href="#.">Helpline</a></div> 
     </li>
     <li>
-    <div class="thumb-content"><a href="#.">About</a></div> 
+    <div class="thumb-content"><a href="#.">News</a></div> 
     </li>
     </ul>
     </div>
@@ -326,7 +341,7 @@ transition: all 250ms ease-in-out 0s;
     <div class="col-xs-12 col-sm-6 col-md-3">
     <div class="widget no-box">
     <h5 class="widget-title">Get Started<span></span></h5>
-    <p>Get access to your full Training and Marketing Suite.</p>
+    <p> Save a Life Without Being Doctor !</p>
     <a class="btn" href="" target="_blank">Save Life !</a>
     </div>
     </div>
@@ -354,7 +369,7 @@ transition: all 250ms ease-in-out 0s;
     <div class="container">
     <div class="row">
     <div class="col-md-12 text-center">
-    <p>Copyright e-Raktdaan © 2022. All rights reserved.</p>
+    <p>Copyright e-Raktdaan Â© 2022. All rights reserved.</p>
     </div>
     </div>
     </div>

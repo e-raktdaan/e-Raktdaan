@@ -124,10 +124,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="one.html"><i class="fa fa-home"></i> Home</a>
+                <a class="nav-link active" aria-current="page" href="one.jsp"><i class="fa fa-home"></i> Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="one.html#about"><i class="fa fa-book"></i> About Us</a>
+                <a class="nav-link" href="one.jsp#about"><i class="fa fa-book"></i> About Us</a>
               </li>
              
               <li class="nav-item">
@@ -137,17 +137,21 @@
                 <a class="nav-link " href="#footer"><i class="fa fa-address-book-o"></i> Contact Us</a>
               </li>
 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-key"></i>
-                   Login
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Needy?</a></li>
-                  <li><a class="dropdown-item" href="#">Donor?</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Admin</a></li>
-                </ul>
-              </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true" aria-haspopup="true"><i class="fa fa-key"></i>
+                       Login
+                    </a>
+                    <ul class="dropdown-menu" >
+                      <li><a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#modal1">Indivisual</a>
+                      </li>
+                      
+                      <li><a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#modal2">Organisation</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#modal3">Admin</a></li>
+                    </ul>
+
+                    
+                  </li>
             </ul>
             <form action="find" class="d-flex" method="post">
               <input class="form-control me-2" type="text" name="city" placeholder="City Name... " aria-label="Search" style="font-style:italic">
@@ -193,7 +197,7 @@ ArrayList<Stock> list=(ArrayList<Stock>) request.getAttribute("elist");
             <br>
             
             <br>
-            <h4>Sorry, Not available in city Right Now</h4> 
+            <h4>Sorry, Not available in this city Right Now</h4> 
    			
   <%       } 
          else {
@@ -226,7 +230,7 @@ ArrayList<Stock> list=(ArrayList<Stock>) request.getAttribute("elist");
                 	
                           <tr class="table-success">
                               <td ><%out.print(s.getB_Group()); %></td>
-                              <td><%out.print(s.getExpiry()); %></td>
+                              <td><%out.print(s.getCurrDate()); %></td>
                               <td><%out.print(s.getCity()); %></td>
                               <td><%out.print(s.getPhone()); %></td>
                               <td ><%out.print(s.getQuantity()); %> units</td>

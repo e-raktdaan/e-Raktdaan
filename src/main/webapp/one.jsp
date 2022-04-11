@@ -1,33 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>e-raktdaan</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS v5.0.2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
-    <!--Font awesome-->
+    <!--font awesome Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
+    
+  
+    
+
+    #mbutton:hover{
+      background-color:#4b92dc;
+    }
+
+      button{
+      background-color: #CA0B00;
+     }
         body{
             background-color: gainsboro;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
 
-        #mbutton:hover{
-      background-color:#4b92dc;
-       }
-       button{
-      background-color: #CA0B00;
-     }
-
-
-
-      
-        footer .main-footer{  padding: 20px 0;  background: #252525;}
+        /* Main Footer */
+footer .main-footer{  padding: 20px 0;  background: #252525;}
 footer ul{  padding-left: 0;  list-style: none;}
 
 /* Copy Right Footer */
@@ -100,153 +105,28 @@ box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 transition: all 250ms ease-in-out 0s;
 
 }
-
-.register{
-    background: -webkit-linear-gradient(left, #696969, #dcdcdc);
-    margin-top: 3%;
-    padding: 3%;
-}
-.register-left{
-    text-align: center;
-    color: #fff;
-    margin-top: 4%;
-}
-.register-left input{
-    border: none;
-    border-radius: 1.5rem;
-    padding: 2%;
-    width: 60%;
-    background: #f8f9fa;
-    font-weight: bold;
-    color: #383d41;
-    margin-top: 30%;
-    margin-bottom: 3%;
-    cursor: pointer;
-}
-.register-right{
-    background: #f8f9fa;
-    border-top-left-radius: 10% 50%;
-    border-bottom-left-radius: 10% 50%;
-}
-.register-left img{
-    margin-top: 15%;
-    margin-bottom: 5%;
-    width: 25%;
-    -webkit-animation: mover 2s infinite  alternate;
-    animation: mover 1s infinite  alternate;
-}
-@-webkit-keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
-}
-@keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
-}
-.register-left p{
-    font-weight: lighter;
-    padding: 12%;
-    margin-top: -9%;
-}
-.register .register-form{
-    padding: 10%;
-    margin-top: 10%;
-}
-.btnRegister{
-    float: right;
-    margin-top: 10%;
-    border: none;
-    border-radius: 0.2rem;
-    padding: 2%;
-    background: #CA0B00;
-    color: #fff;
-    font-weight: 200;
-    width: 50%;
-    cursor: pointer;
-    
-}
-.btnRegister:hover { 
-  background-color: #4b92dc;
-}
-.register .nav-tabs{
-    margin-top: 3%;
-    border: none;
-    background: #CA0B00;
-    border-radius: 1.5rem;
-    width: 28%;
-    float: right;
-}
-.register .nav-tabs .nav-link{
-    padding: 2%;
-    height: 34px;
-    font-weight: 600;
-    color: #fff;
-    border-top-right-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
-}
-.register .nav-tabs .nav-link:hover{
-    border: none;
-}
-.register .nav-tabs .nav-link.active{
-    width: 100px;
-    color: #CA0B00;
-    border: 2px solid #CA0B00;
-    border-top-left-radius: 1.5rem;
-    border-bottom-left-radius: 1.5rem;
-}
-.register-heading{
-    text-align: center;
-    margin-top: 8%;
-    margin-bottom: -15%;
-    color: #495057;
-}
-
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.sticky + .content {
-  padding-top: 60px;
-}
-   
+  
+  
     </style>
 
-<script>
-    window.onscroll = function() {myFunction()};
-    
-    var navbar = document.getElementById("navbar");
-    var sticky = navbar.offsetTop;
-    
-    function myFunction() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    }
-    </script>
+</head>
 
   </head>
   <body>
-
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-1 sticky-sm-top" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-1 sticky-sm-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="one.html">
             <img src="logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="one.jsp"><i class="fa fa-home"></i> Home</a>
+                <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-home"></i> Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./one.jsp#about"><i class="fa fa-book"></i> About Us</a>
+                <a class="nav-link" href="#about"><i class="fa fa-book"></i> About Us</a>
               </li>
              
               <li class="nav-item">
@@ -261,17 +141,18 @@ transition: all 250ms ease-in-out 0s;
                        Login
                     </a>
                     <ul class="dropdown-menu" >
-                      <li><a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#modal1">Indivisual</a>
+                      <li><a class="dropdown-item "  href="login.html" data-toggle="modal" data-target="#modal1">Indivisual</a>
                       </li>
                       
-                      <li><a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#modal2">Organisation</a></li>
+                      <li><a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#modal2" id="organisation">Organisation</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#modal3">Admin</a></li>
                     </ul>
-          
+
+                    
                   </li>
             </ul>
-             <form action="find" class="d-flex" method="post">
+            <form action="find" class="d-flex" method="post">
               <input class="form-control me-2" type="text" name="city" placeholder="City Name... " style="font-style:italic" required>
               <button class="btn btn-danger" type="submit">find?</button>
             </form>
@@ -279,113 +160,146 @@ transition: all 250ms ease-in-out 0s;
         </div>
       </nav>
 
-      <br>
-      <div class="container">
-      <div class="row">
-        <div class="col-12 text-danger" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><h3><b>e-Raktdaan</b></h3></div>
-        
-    </div>
-   
-      <div class="container register rounded">
-        <div class="row">
-            <div class="col-md-3 register-left">
-                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-                <h3>Welcome</h3>
-                <p>You are few steps away from saving a life !</p>
-                <a href="login.html"><input type="submit" name="" value="Login"/></a><br/>
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="4438756.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
             </div>
-           
-            <div class="col-md-9 register-right">
-  <form action="register" method="post">
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <h3 class="register-heading">Register as an Indivisual</h3>
-                        <div class="row register-form">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="fname" class="form-control" placeholder="First Name *" value="" required/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name = "lname" class="form-control" placeholder="Last Name *" value="" required/>
-                                </div>
+          </div>
+          <div class="carousel-item">
+            <img src="4438767.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="4438751.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
-                                <div class="form-group">
-                                    <input type="text" class="form-control"  placeholder="Date of Birth *" name="dob" onfocus="(this.type='date')"  onblur="(this.type='text')" required/>
-                                </div>
-                                
-                                                                                             
-                                
-                                <div class="form-group">
-                                    <input type="text" name = "city" class="form-control" placeholder="City *" value="" required />
-                                </div>
-                                
-                                <div class="form-group">
-                                    <div class="maxl">
-                                        <label class="radio inline"> 
-                                            <input type="radio" name="gender" value="M" checked required>
-                                            <span> Male </span> 
-                                        </label>
-                                        <label class="radio inline"> 
-                                            <input type="radio" name="gender" value="F" required>
-                                            <span>Female </span> 
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                            
-                                   <div class="form-group" >
-                                    <select class="form-control" name="bgroup" required>
-                                        <option class="hidden"  selected disabled>Blood Group</option>
-                                        <option value="A+">A+</option>
-                                        <option value="A-">A-</option>
-                                        <option value="B+">B+</option>
-                                        <option value="B-">B-</option>
-                                        <option value="O+">O+</option>
-                                        <option value="O-">O-</option>
-                                        <option value="AB+">AB+</option>
-                                        <option value="AB-">AB-</option>
-                                    </select>
-                                </div>
-                                 
-                                <div class="form-group">
-                                    <input type="email" name = "email" class="form-control" placeholder="Your Email *" value="" required />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" minlength="10" maxlength="10" name="phone" class="form-control" placeholder="Your Phone *" value="" required/>
-                                </div>
+   
 
-                                
-                               <div class="form-group">
-                                    <input type="password" name = "password" class="form-control" placeholder="Password *" value="" required/>
-                                </div>
-                                
- 
-                                    <input  type="submit" class="btnRegister"  value="Register"/>     
-                                
-                            </div>
+<br>
+<div class="conatiner">
+    <div class="row">
+     <div class="col-6 text-center"><button class="btn btn-danger btn-lg rounded-pill" data-bs-toggle="modal" data-bs-target="#modelId"><h2><b>Donate</b></h2></button></div>
+
+     <div class="col-6 text-center "><button class="btn btn-danger btn-lg rounded-pill" data-bs-toggle="modal" data-bs-target="#modelId"><h2><b>Register</b></h2></button></div>
+     </div>
+             <!-- Modal -->
+             <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" ">
+                <div class="modal-dialog" role="document" >
+                  <div class="modal-content" style="background-color: lightgray">
+                    <div class="modal-header">
+                      
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="mbutton"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-12 text-center">
+                          <a href="organisationRegistration.html" target="_blank"><button class="rounded  text-light" id="mbutton"><h3><b>Register as an Organisation ?</b></h3></button></a>
                         </div>
-                    </div>
-                   
-                    </div>
-                     </form>
+                      </div>
+      
+                      <br>
+      
+                      <div class="row">
+                        <div class="col-12 text-center">
+                          <a href="registration.html" target="_blank"><button class="rounded text-light" id="mbutton"><h3><b>Register as an individual ?</b></h3></button></a>
+                        </div>
+                      </div>
+      
+                      <br>
+      
+                      <div class="row">
+                        <div class="col-12 text-center">
+                        <a href="login.html"><button class="rounded text-light" id="mbutton" ><h3><b>Already Registered User ?</b></h3></button></a>  
+                        </div>
+                      </div>
+                      <br>
+                      <br>
                     </div>
                     
-             </div>
-      </div>
-       
-       
-      </div>
-  
+                  </div>
+                </div>
+   </div>
 
-  <br>
-  <br>
-  <br>
+   <br>
+      <hr>
+      <br>
+
+
+      <div class="container">
+        <div class="row" >
+            <div class="col-5  text-danger " style="padding: 15px;  "><b><h1>why blood donation ?</h1> </b></div>
+            <div class="col-7  ">
+                Blood donations in India are conducted by organisations and hospitals through blood donation camps. Donors can also visit blood banks in hospitals to donate blood. Despite the shortage of donated blood, efforts by the government and advocacy groups over the years have helped bridge the gap between demand and supply. The number of voluntary blood donors increased from 54.4% in 2006â2007 to 83.1% in 2011â2012, with the number of blood units increasing from 4.4 million units in 2006â2007 to 9.3 million units in 2012â2013.[1] In 2016, the Ministry of Health and Family Welfare reported a donation of 10.9 million units against a requirement of 12 million units.[2] 12.7 million units were donated in 2020, lower than projected due to the COVID-19 pandemic.[3] The regulatory framework for blood donation and blood bank management rests with the Central Drugs Standard Control Organisation, while technical bodies like the National Blood Transfusion Council and National AIDS Control Organisation formulate guidelines and recommendations for transfusion medicine and blood bank management.
+                Healthy individuals can donate around 350 millilitres of blood.[4] Donors are provided with refreshments after the procedure, which usually include glucose drinks, biscuits and fruits. Some organisations offer transportation facilities, as well as certificates or badges as gratitude
+                
+
+            </div>
+        </div>
+
+      </div>
+      <br>
+      <hr>
+      <br>
+
+      <div class="container">
+        <div class="row" id="about">
+            <div class="col-5  text-danger " style="padding: 15px;  "><b><h1>who should donate ?</h1> </b></div>
+            <div class="col-7  "> 
+                We are a non-profit organization whose mission is to provide the blood needed to save the lives of the people . Our goal is to keep all information about blood donors, various blood groups available at each blood supply and help them to manage better. The aim is to provide transparency in the field, to make the blood banking system free and free of corruption and to make the blood bank control system work.
+                Blood Bank Management System (BBMS) could be a browser based mostly system that's designed to store, process, retrieve and analyze info involved with the executive and inventory management inside a bank. This project aims at maintaining all the knowledge touching on blood donors, totally different blood teams out there in every bank and facilitate them manage during a higher means. Aim is to supply transparency during this field, build the method of getting blood from a bank problem free and corruption free and build the system of bank management effective.
+            </div>
+        </div>
+
+      </div>
+
+      <br>
+      <hr>
+      <br>
+      
+      <div class="container">
+        <div class="row" id="about">
+            <div class="col-5  text-danger " style="padding: 15px;  "><b><h1>who we are ?</h1> </b></div>
+            <div class="col-7  "> 
+                We are a non-profit organization whose mission is to provide the blood needed to save the lives of the people . Our goal is to keep all information about blood donors, various blood groups available at each blood supply and help them to manage better. The aim is to provide transparency in the field, to make the blood banking system free and free of corruption and to make the blood bank control system work.
+                Blood Bank Management System (BBMS) could be a browser based mostly system that's designed to store, process, retrieve and analyze info involved with the executive and inventory management inside a bank. This project aims at maintaining all the knowledge touching on blood donors, totally different blood teams out there in every bank and facilitate them manage during a higher means. Aim is to supply transparency during this field, build the method of getting blood from a bank problem free and corruption free and build the system of bank management effective.
+            </div>
+        </div>
+
+      </div>
+      <br>
+      <br>
       
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   </body>
+
   <footer id="footer" class="footer-1">
     <div class="main-footer widgets-dark typo-light">
     <div class="container">
@@ -406,7 +320,7 @@ transition: all 250ms ease-in-out 0s;
     <div class="thumb-content"><a href="#.">Get Started</a></div> 
     </li>
     <li>
-    <div class="thumb-content"><a href="#.">Red Cross Society</a></div> 
+    <div class="thumb-content"><a href="https://www.indianredcross.org/ircs/index.php">Red Cross Society</a></div> 
     </li>
     <li>
     <div class="thumb-content"><a href="#.">Indian Blood Bank</a></div> 
@@ -415,7 +329,7 @@ transition: all 250ms ease-in-out 0s;
     <div class="thumb-content"><a href="#.">e-RaktKosh</a></div> 
     </li>
     <li>
-    <div class="thumb-content"><a href="#."></a></div>  
+    <div class="thumb-content"><a href="#.">WHO</a></div>  
     </li>
     <li>
     <div class="thumb-content"><a href="#.">Helpline</a></div> 
@@ -458,11 +372,13 @@ transition: all 250ms ease-in-out 0s;
     <div class="container">
     <div class="row">
     <div class="col-md-12 text-center">
-    <p>Copyright e-Raktdaan © 2022. All rights reserved.</p>
+    <p>Copyright e-Raktdaan Â© 2022. All rights reserved.</p>
     </div>
     </div>
     </div>
     </div>
     </footer>
-
+    
+    
+ 
 </html>

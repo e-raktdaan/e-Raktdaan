@@ -1,3 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<%@page import="com.eratkdaan.DonorHistory"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+    <%@ page import="java.util.ArrayList" %>
+    <%@ page import="java.util.List" %>
+    <%@ page import="com.eratkdaan.PersonRegister" %>
+    <%@ page import="com.eratkdaan.Stock" %>
+    
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,25 +20,18 @@
 
     <!-- Bootstrap CSS v5.0.2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
-    <!--Font awesome-->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
     <style>
-        body{
+         body{
             background-color: gainsboro;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
+        p{
+          font-weight: bold;
+        }
 
-        #mbutton:hover{
-      background-color:#4b92dc;
-       }
-       button{
-      background-color: #CA0B00;
-     }
-
-
-
-      
         footer .main-footer{  padding: 20px 0;  background: #252525;}
 footer ul{  padding-left: 0;  list-style: none;}
 
@@ -100,139 +105,11 @@ box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 transition: all 250ms ease-in-out 0s;
 
 }
-
-.register{
-    background: -webkit-linear-gradient(left, #696969, #dcdcdc);
-    margin-top: 3%;
-    padding: 3%;
-}
-.register-left{
-    text-align: center;
-    color: #fff;
-    margin-top: 4%;
-}
-.register-left input{
-    border: none;
-    border-radius: 1.5rem;
-    padding: 2%;
-    width: 60%;
-    background: #f8f9fa;
-    font-weight: bold;
-    color: #383d41;
-    margin-top: 30%;
-    margin-bottom: 3%;
-    cursor: pointer;
-}
-.register-right{
-    background: #f8f9fa;
-    border-top-left-radius: 10% 50%;
-    border-bottom-left-radius: 10% 50%;
-}
-.register-left img{
-    margin-top: 15%;
-    margin-bottom: 5%;
-    width: 25%;
-    -webkit-animation: mover 2s infinite  alternate;
-    animation: mover 1s infinite  alternate;
-}
-@-webkit-keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
-}
-@keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
-}
-.register-left p{
-    font-weight: lighter;
-    padding: 12%;
-    margin-top: -9%;
-}
-.register .register-form{
-    padding: 10%;
-    margin-top: 10%;
-}
-.btnRegister{
-    float: right;
-    margin-top: 10%;
-    border: none;
-    border-radius: 0.2rem;
-    padding: 2%;
-    background: #CA0B00;
-    color: #fff;
-    font-weight: 200;
-    width: 50%;
-    cursor: pointer;
-    
-}
-.btnRegister:hover { 
-  background-color: #4b92dc;
-}
-.register .nav-tabs{
-    margin-top: 3%;
-    border: none;
-    background: #CA0B00;
-    border-radius: 1.5rem;
-    width: 28%;
-    float: right;
-}
-.register .nav-tabs .nav-link{
-    padding: 2%;
-    height: 34px;
-    font-weight: 600;
-    color: #fff;
-    border-top-right-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
-}
-.register .nav-tabs .nav-link:hover{
-    border: none;
-}
-.register .nav-tabs .nav-link.active{
-    width: 100px;
-    color: #CA0B00;
-    border: 2px solid #CA0B00;
-    border-top-left-radius: 1.5rem;
-    border-bottom-left-radius: 1.5rem;
-}
-.register-heading{
-    text-align: center;
-    margin-top: 8%;
-    margin-bottom: -15%;
-    color: #495057;
-}
-
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.sticky + .content {
-  padding-top: 60px;
-}
-   
     </style>
-
-<script>
-    window.onscroll = function() {myFunction()};
-    
-    var navbar = document.getElementById("navbar");
-    var sticky = navbar.offsetTop;
-    
-    function myFunction() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    }
-    </script>
 
   </head>
   <body>
-
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-1 sticky-sm-top" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-1 sticky-sm-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img src="logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> </a>
@@ -240,13 +117,12 @@ transition: all 250ms ease-in-out 0s;
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="one.jsp"><i class="fa fa-home"></i> Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./one.jsp#about"><i class="fa fa-book"></i> About Us</a>
+                <a class="nav-link" href="one.jsp#about"><i class="fa fa-book"></i> About Us</a>
               </li>
              
               <li class="nav-item">
@@ -268,124 +144,354 @@ transition: all 250ms ease-in-out 0s;
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#modal3">Admin</a></li>
                     </ul>
-          
+
+                    
                   </li>
             </ul>
-             <form action="find" class="d-flex" method="post">
-              <input class="form-control me-2" type="text" name="city" placeholder="City Name... " style="font-style:italic" required>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search"  placeholder="City Name... " aria-label="Search" style="font-style:italic">
               <button class="btn btn-danger" type="submit">find?</button>
             </form>
           </div>
         </div>
       </nav>
+      
 
-      <br>
-      <div class="container">
-      <div class="row">
-        <div class="col-12 text-danger" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><h3><b>e-Raktdaan</b></h3></div>
-        
-    </div>
-   
-      <div class="container register rounded">
-        <div class="row">
-            <div class="col-md-3 register-left">
-                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-                <h3>Welcome</h3>
-                <p>You are few steps away from saving a life !</p>
-                <a href="login.html"><input type="submit" name="" value="Login"/></a><br/>
+      <%  
+      
+    
+      
+      String s = null;
+      @SuppressWarnings("unchecked")
+      ArrayList<PersonRegister> list=(ArrayList<PersonRegister>) request.getAttribute("elist"); %>
+
+      <div class="container mt-4 ">
+          <div class="row">
+              <div class="col-10 text-danger">
+               <h3><b>Welcome, <% for(PersonRegister p:list){out.print(p.getFname());%> </b></h3>   
+              </div>
+              <div class="col-2 " style="text-align:left;" >
+                <img class="img-fluid rounded-pill " alt="Responsive image" src="logo.png" style="width: 100px">
+            </div>
+            <div class="row">
+                <div class="col-3">
+                  Full Name
+                </div>
+                <div class="col-9">
+                 <b><p><%out.print(p.getFname());%>   <% out.print(p.getLname()); %></p></b>   
+                </div>
             </div>
            
-            <div class="col-md-9 register-right">
-  <form action="register" method="post">
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <h3 class="register-heading">Register as an Indivisual</h3>
-                        <div class="row register-form">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="fname" class="form-control" placeholder="First Name *" value="" required/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name = "lname" class="form-control" placeholder="Last Name *" value="" required/>
-                                </div>
+            <div class="row mt-2">
+                <div class="col-3">
+                    Blood-Group
+                </div>
+                <div class="col-4">
+                    <p><%out.print(p.getBgroup()); %></p>
+                </div>
+            </div>
+           
+            <br>
+            
+           <div class="row mt-2">
+                <div class="col-3">
+                    Date-of-Birth
+                </div>
+                <div class="col-4 ">
+                    <p><%out.print(p.getDob()); %></p>
+                </div>
+            </div>
+            
 
-                                <div class="form-group">
-                                    <input type="text" class="form-control"  placeholder="Date of Birth *" name="dob" onfocus="(this.type='date')"  onblur="(this.type='text')" required/>
-                                </div>
-                                
-                                                                                             
-                                
-                                <div class="form-group">
-                                    <input type="text" name = "city" class="form-control" placeholder="City *" value="" required />
-                                </div>
-                                
-                                <div class="form-group">
-                                    <div class="maxl">
-                                        <label class="radio inline"> 
-                                            <input type="radio" name="gender" value="M" checked required>
-                                            <span> Male </span> 
-                                        </label>
-                                        <label class="radio inline"> 
-                                            <input type="radio" name="gender" value="F" required>
-                                            <span>Female </span> 
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                            
-                                   <div class="form-group" >
-                                    <select class="form-control" name="bgroup" required>
-                                        <option class="hidden"  selected disabled>Blood Group</option>
-                                        <option value="A+">A+</option>
-                                        <option value="A-">A-</option>
-                                        <option value="B+">B+</option>
-                                        <option value="B-">B-</option>
-                                        <option value="O+">O+</option>
-                                        <option value="O-">O-</option>
-                                        <option value="AB+">AB+</option>
-                                        <option value="AB-">AB-</option>
-                                    </select>
-                                </div>
-                                 
-                                <div class="form-group">
-                                    <input type="email" name = "email" class="form-control" placeholder="Your Email *" value="" required />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" minlength="10" maxlength="10" name="phone" class="form-control" placeholder="Your Phone *" value="" required/>
-                                </div>
 
-                                
-                               <div class="form-group">
-                                    <input type="password" name = "password" class="form-control" placeholder="Password *" value="" required/>
-                                </div>
-                                
+            <br>
+            <div class="row mt-2">
+                <div class="col-3">
+                    Phone
+                </div>
+                <div class="col-4">
+                    <p><%out.print(p.getPhone()); %></p>
+                </div>
+            </div>
+            
+            <div class="row mt-2">
+                <div class="col-3">
+                    Email
+                </div>
+                <div class="col-4">
+                    <p><%out.print(p.getEmail());
+                    s=p.getEmail();
+                    %></p>
+                </div>
+            </div>
+            
+            
+             <div class="row mt-2">
+                <div class="col-3">
+                    City
+                </div>
+                <div class="col-9">
+                    <p><%out.print(p.getCity()); } %></p>
+                </div>
+                
+            </div>
+            
+      <%request.setAttribute("email",s);%>
+
+
+            <div class="row mt-2">
+                <div class="col-3">
+                    You have Donated 
+                </div>
+                <div class="col-9 ">
+                  <b>3  </b>   Units of Blood
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+<%ArrayList<DonorHistory> dhlist=(ArrayList<DonorHistory>) request.getAttribute("dh_elist"); 
+
+for(DonorHistory dh:dhlist){
+%>
+          <div class="row">
+              <div class="col-12">
+              
+              <h5><b>Blood Donated History</b></h5>
+
+                <table class="table table-responsive mt-2 table-hover table-sm">
+                    <thead class="thead-inverse|thead-default">
+                        <tr class="table-danger">
+                            <th scope="col">Reference ID</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">City</th>
+                            <th scope="col"class="text-center" >Date</th>
+                            <th scope="col" class="text-center">Organisation Name</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-success">
+                                <td ><% out.print(dh.getReferenceId());%></td>
+                                <td ><% out.print(dh.getQuantity());%> units</td>
+                                <td><% out.print(dh.getDcity());%></td>
+                                <td class="text-center"><% out.print(dh.getDdate());%></td>
+                                <td class="text-center"><% out.print(dh.getOrganisationName());}%></td>
+                            </tr>
+                  
+                        </tbody>
+                </table>
+
+              </div>
+           
+
+              <div class="row">
+                  <div class="col-6 " >
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#modelId">
+                        Want to Donate Blood ?
+                      </button>
+                      
+                      <!-- Modal -->
+                      <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                              <div class="modal-content" style="background-color: gainsboro;">
+                                      <div class="modal-header">
+                                              <h5 class="modal-title">Please! Fill the details in order to donate Blood</h5>
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+            <form action="updatebloodstock" method="post">
+                                  <div class="modal-body">
+                                      <div class="container-fluid text-center">
+              <div class="row">
+                <div class="col-3">
+                  Full Name
+                </div>
+                <div class="col-4">
+                    <input type="text" name="donorname" required>
+                </div>
+            </div>
+           
+         
  
-                                    <input  type="submit" class="btnRegister"  value="Register"/>     
-                                
-                            </div>
-                        </div>
-                    </div>
-                   
-                    </div>
-                     </form>
-                    </div>
-                    
-             </div>
-      </div>
-       
-       
-      </div>
-  
+            <div class="row mt-2">
+                <div class="col-3">
+                    Blood-Group
+                </div>
+                <div class="col-4">
+                    <select class="l" name="bgroup" required>
+                        <option class="hidden"  selected disabled>Blood Group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                         <option value="O-">O-</option>
+                         <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row mt-1">
+                <div class="col-3">
+                    Age
+                </div>
+                <div class="col-4">
+                    <input type="number" name="age" required>
+                </div>
+            </div>
+            
+            <div class="row mt-2">
+                <div class="col-3">
+                    Quantity 
+                </div>
+                <div class="col-4">
+                    <input type="text" name="quantity" placeholder="in Units" required>
+                </div>
+            </div>
+            
+            <div class="row mt-2">
+                <div class="col-3">
+                    City
+                </div>
+                <div class="col-4 ">
+                    <input type="text" name="donorcity" placeholder="City(Correct Spelling)"required>
+                </div>
+            </div>
+            
+             <input type="hidden" name="email" value="<%=s%>" />
 
-  <br>
-  <br>
-  <br>
+                   </div>
+                       </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Save</button>
+                           </div>
+                           </form>
+                       </div>
+                   </div>
+               </div>
+                      
+                      <script>
+                          var modelId = document.getElementById('modelId');
+                      
+                          modelId.addEventListener('show.bs.modal', function (event) {
+                                // Button that triggered the modal
+                                let button = event.relatedTarget;
+                                // Extract info from data-bs-* attributes
+                                let recipient = button.getAttribute('data-bs-whatever');
+                      
+                              // Use above variables to manipulate the DOM
+                          });
+                      </script>
+                                         
+                  </div>
+                  <div class="col-6 text-center ">
+                      
+                  </div>
+              </div>
+              
+              <div class="row mt-4">
+              <div class="col-12">
+              
+              <h5><b>Blood Stock Updated History</b></h5>
+
+                <table class="table table-responsive mt-2 table-hover table-sm">
+                    <thead class="thead-inverse|thead-default">
+                        <tr class="table-danger">
+                            <th scope="col">Donor Name</th>
+                            <th scope="col">Blood Group</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Age</th>
+                            <th scope="col"class="text-center" >Quantity</th>
+                            <th scope="col" class="text-center">Date (When Added)</th>
+                            <th scope="col" class="text-center">Action</th>
+                           
+                           
+ <%ArrayList<Stock> bslist = (ArrayList<Stock>) request.getAttribute("bs_elist"); 
+
+   for(Stock bs : bslist){
+%>
+                            
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-success">
+                                <td ><%out.print(bs.getDonorName());  %></td>
+                                <td ><%out.print(bs.getB_Group());  %></td>
+                                <td ><%out.print(bs.getCity());  %></td>
+                                <td><%out.print(bs.getAge());  %></td>
+                                <td class="text-center"><%out.print(bs.getQuantity());  %></td>
+                                <td class="text-center"><%out.print(bs.getCurrDate());  %></td>
+                                <td class="text-center"><button class="btn btn-success rounded-pill">edit</button>
+                                <form action="deleteBstock" method="post">
+                                <input type="hidden" name="email" value="<%=s%>" />
+                                <button type="submit" class="btn btn-warning rounded-pill">Delete</button>
+                                </form> </td><% }%>
+                                
+                            </tr>
+                            
+
+                  
+                        </tbody>
+                </table>
+
+              </div>
+              </div>
+              
+              
+              <div class="row mt-4">
+                  <div class="col-12">
+                      Validate Your Donated Blood Here   <a  data-bs-toggle="collapse" href="#collapseExample"  aria-expanded="false" aria-controls="collapseExample">
+                        Click here 
+                      </a>
+                      <div class="collapse" id="collapseExample">
+                        <div  style="background-color: gainsboro;">
+                          <form action="validate" method="post">
+                            <div class="row">
+                              <div class="col">
+                                <input type="text" name="referenceid" class="form-control" placeholder="Reference ID*" >
+                                <input type="hidden" name="email" value="<%=s%>" />
+                              </div>                                                           
+
+                              <div class="col">
+                                <input type="submit" class="btn btn-block btn-danger ">
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+              </div>
+              <div class="row mt-4">
+                  <div class="col-12">
+                      Download Your e-Raktdaan Certificate from here <a href="#">Click here</a>
+                  </div>
+
+              </div>
+              
+          <div class="row mt-4">
+                  <div class="col-12">
+                         <form action="logout" method="post">
+                         <input type="submit" value="Logout" />
+                        </form>
+                  </div>
+
+              </div>
+          </div>
+          </div>
+          </div>
+
+          <br>
+          <br>
+          <br>
+    
+      </div>
       
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   </body>
+
   <footer id="footer" class="footer-1">
     <div class="main-footer widgets-dark typo-light">
     <div class="container">
@@ -430,7 +536,7 @@ transition: all 250ms ease-in-out 0s;
     <div class="col-xs-12 col-sm-6 col-md-3">
     <div class="widget no-box">
     <h5 class="widget-title">Get Started<span></span></h5>
-    <p> Save a Life Without Being Doctor !</p>
+    <p>Save a Life Without Being Doctor !</p>
     <a class="btn" href="" target="_blank">Save Life !</a>
     </div>
     </div>
@@ -458,11 +564,10 @@ transition: all 250ms ease-in-out 0s;
     <div class="container">
     <div class="row">
     <div class="col-md-12 text-center">
-    <p>Copyright e-Raktdaan © 2022. All rights reserved.</p>
+    <p>Copyright e-Raktdaan Â© 2022. All rights reserved.</p>
     </div>
     </div>
     </div>
     </div>
     </footer>
-
 </html>

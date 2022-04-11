@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -15,6 +16,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+
 
 
 
@@ -50,10 +53,35 @@ public class StockServlet extends HttpServlet {
         	
         }
 		
-		else if(action.equals("/register"))
-		{
-			 registerUser(request, response);
-		}
+		if(action.equals("/updatebloodstock"))
+        {
+			
+			
+			try {
+				updateBloodStock(request, response);
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+			
+			if(action.equals("/deleteBstock"))
+	        {
+				
+				
+				deleteBloodStock(request, response); 
+				
+	        }
+			
+		
+
+        	
+        	
+        
+        }	
+
 		
 		
 
@@ -75,7 +103,7 @@ public class StockServlet extends HttpServlet {
      
         PrintWriter out = response.getWriter();
         
-        String city = request.getParameter("city");
+         String city = request.getParameter("city");
        
          Stock s = new Stock(city);
 
@@ -90,54 +118,86 @@ public class StockServlet extends HttpServlet {
             RequestDispatcher rd= request.getRequestDispatcher("stockview.jsp");
      		rd.include(request, response);   	 
         	 
-   
-  		
 
 	
   	}
 	
-	
-	private void registerUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	private void updateBloodStock(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ClassNotFoundException, SQLException 
 	{
 		response.setContentType("text/html");  
         PrintWriter out =response.getWriter();  
         
-      
-   
-
-		
         
-    	String fname = request.getParameter("fname"); 
-    	String lname = request.getParameter("lname"); 
-    	String password = request.getParameter("password"); 
-    	String gender = request.getParameter("gender"); 
-    	String email = request.getParameter("email"); 
-    	String phone = request.getParameter("phone"); 
+    	String donorname = request.getParameter("donorname"); 
     	String bgroup = request.getParameter("bgroup"); 
-    	String city = request.getParameter("city"); 
+    	String age = request.getParameter("age"); 
+    	String quantity = request.getParameter("quantity"); 
+    	String donorcity = request.getParameter("donorcity");
+    	String email = request.getParameter("email"); 
     	
+    	
+    	
+    	LocalDate today = java.time.LocalDate.now();
+    	
+    	String currDate = today.toString();
 
-//		  int pid=Integer.parseInt(request.getParameter("pid"));  
-//        String name=request.getParameter("name");  
-//        int price=Integer.parseInt(request.getParameter("price")); 
-//        int quantity=Integer.parseInt(request.getParameter("quantity")); 
-//        int discount=Integer.parseInt(request.getParameter("discount")); 
+    	    	
+
+				Stock s = new Stock(donorname,bgroup,age,quantity,donorcity,currDate);
+			    EraktdaanDao edao = new EraktdaanDao();
+				
+		      try {
+					
+		      	int result=edao.insertBloodStock(s,email);
+		      	if(result !=0)
+		      	{
+		      		
+		      		out.println("UPDATED");
+
+
+		      		
+		      	}else
+		      	{
+		      		out.println("not inserted");
+		      	}
+		      		
+					
+				} catch (ClassNotFoundException | SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
 		
-		PersonRegister p = new PersonRegister(fname,lname,password,gender,email,phone,bgroup,city);
+ 	}
+	
+	
+
+
+	
+	private void deleteBloodStock(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		response.setContentType("text/html");  
+        PrintWriter out =response.getWriter();  
+		
+      
+		String email=request.getParameter("email");  
+		
+		out.print(email);
 	    EraktdaanDao edao = new EraktdaanDao();
 		
       try {
 			
-      	int result=edao.register(p);
+      	int result = edao.removeBloodStock(email);
       	if(result !=0)
       	{
       		
-      		out.println("Registered Successfully, You got a mail very soon");
-
+      		out.println("Product Deleted successfully");
+      		RequestDispatcher rd= request.getRequestDispatcher("menu.html");
+  			rd.include(request, response);
       		
       	}else
       	{
-      		out.println("not inserted");
+      		out.println("not deleted");
       	}
       		
 			
@@ -148,6 +208,8 @@ public class StockServlet extends HttpServlet {
   
   		
  	}
+	
+
 	
 
 }

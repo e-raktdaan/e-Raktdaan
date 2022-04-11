@@ -10,10 +10,11 @@ public class PersonRegister {
 	String phone;
 	String bgroup;
 	String city;
+	String dob;
 	
 	
 	public PersonRegister(String fname, String lname, String password, String gender, String email, String phone,
-			String bgroup, String city) {
+			String bgroup, String city, String dob) {
 	
 		this.fname = fname;
 		this.lname = lname;
@@ -23,7 +24,27 @@ public class PersonRegister {
 		this.phone = phone;
 		this.bgroup = bgroup;
 		this.city = city;
+		this.dob=dob;
 	}
+	
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+	public PersonRegister(String email, String password) {
+		this.email=email;
+		this.password=password;
+	}
+	
+	
+	public PersonRegister(String fname) {
+		this.fname= fname;
+	}
+
 	public String getFname() {
 		return fname;
 	}
